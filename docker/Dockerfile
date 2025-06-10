@@ -12,6 +12,8 @@ RUN echo 'tzdata tzdata/Areas select America' | debconf-set-selections \
     && apt install python3 python3-pip -y \
     && apt install curl git sudo libibverbs-dev -y \
     && apt install rdma-core infiniband-diags openssh-server perftest -y \
+    && ln -s /usr/bin/python3 /usr/bin/python \
+    && ln -s /usr/bin/pip3 /usr/bin/pip \
     && python3 --version \
     && python3 -m pip --version \
     && rm -rf /var/lib/apt/lists/* \
