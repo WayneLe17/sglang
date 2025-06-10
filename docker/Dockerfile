@@ -26,6 +26,6 @@ ARG CUINDEX=124
 RUN python3 -m pip install --upgrade pip setuptools wheel html5lib six --ignore-installed \
     && git clone --depth=1 -b fix/update_torch https://github.com/WayneLe17/sglang.git \
     && cd sglang \
-    && python3 -m pip --no-cache-dir install -e "python[${BUILD_TYPE}]"
+    && python3 -m pip --no-cache-dir install -e "python[${BUILD_TYPE}]" --find-links https://flashinfer.ai/whl/cu${CUINDEX}/torch2.6/flashinfer-python
 
 ENV DEBIAN_FRONTEND=interactive
