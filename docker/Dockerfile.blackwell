@@ -28,8 +28,6 @@ RUN git clone --depth=1 https://github.com/sgl-project/sglang.git \
 
 RUN pip3 install nvidia-nccl-cu12==2.26.2.post1 --force-reinstall --no-deps --break-system-packages
 
-RUN pip3 install flashinfer_python==0.2.6 --break-system-packages
-
 ENV DEBIAN_FRONTEND=interactive
 
 # Install minimal Python packages
